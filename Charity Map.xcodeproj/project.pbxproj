@@ -9,10 +9,12 @@
 /* Begin PBXBuildFile section */
 		4931122719805EBB006C271E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4931122619805EBB006C271E /* main.m */; };
 		4931122A19805EBB006C271E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4931122919805EBB006C271E /* AppDelegate.m */; };
-		4931122D19805EBB006C271E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4931122C19805EBB006C271E /* ViewController.m */; };
 		4931123019805EBB006C271E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4931122E19805EBB006C271E /* Main.storyboard */; };
 		4931123219805EBB006C271E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4931123119805EBB006C271E /* Images.xcassets */; };
 		4931123E19805EBB006C271E /* Charity_MapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4931123D19805EBB006C271E /* Charity_MapTests.m */; };
+		4931124A19816AD9006C271E /* LAWalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4931124919816AD9006C271E /* LAWalkthroughViewController.m */; };
+		49F968CD198943B8003C163A /* homeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F968CC198943B8003C163A /* homeViewController.m */; };
+		49F968D01989458B003C163A /* activitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F968CF1989458B003C163A /* activitiesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +33,17 @@
 		4931122619805EBB006C271E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4931122819805EBB006C271E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4931122919805EBB006C271E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4931122B19805EBB006C271E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4931122C19805EBB006C271E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4931122F19805EBB006C271E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4931123119805EBB006C271E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4931123719805EBB006C271E /* Charity MapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Charity MapTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4931123C19805EBB006C271E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4931123D19805EBB006C271E /* Charity_MapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Charity_MapTests.m; sourceTree = "<group>"; };
+		4931124819816AD9006C271E /* LAWalkthroughViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAWalkthroughViewController.h; sourceTree = "<group>"; };
+		4931124919816AD9006C271E /* LAWalkthroughViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAWalkthroughViewController.m; sourceTree = "<group>"; };
+		49F968CB198943B8003C163A /* homeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homeViewController.h; sourceTree = "<group>"; };
+		49F968CC198943B8003C163A /* homeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homeViewController.m; sourceTree = "<group>"; };
+		49F968CE1989458B003C163A /* activitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = activitiesViewController.h; sourceTree = "<group>"; };
+		49F968CF1989458B003C163A /* activitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = activitiesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +85,16 @@
 		4931122319805EBB006C271E /* Charity Map */ = {
 			isa = PBXGroup;
 			children = (
+				4931124719816AD9006C271E /* LAWalkthrough */,
 				4931122819805EBB006C271E /* AppDelegate.h */,
 				4931122919805EBB006C271E /* AppDelegate.m */,
-				4931122B19805EBB006C271E /* ViewController.h */,
-				4931122C19805EBB006C271E /* ViewController.m */,
 				4931122E19805EBB006C271E /* Main.storyboard */,
 				4931123119805EBB006C271E /* Images.xcassets */,
 				4931122419805EBB006C271E /* Supporting Files */,
+				49F968CB198943B8003C163A /* homeViewController.h */,
+				49F968CC198943B8003C163A /* homeViewController.m */,
+				49F968CE1989458B003C163A /* activitiesViewController.h */,
+				49F968CF1989458B003C163A /* activitiesViewController.m */,
 			);
 			path = "Charity Map";
 			sourceTree = "<group>";
@@ -114,6 +123,16 @@
 				4931123C19805EBB006C271E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4931124719816AD9006C271E /* LAWalkthrough */ = {
+			isa = PBXGroup;
+			children = (
+				4931124819816AD9006C271E /* LAWalkthroughViewController.h */,
+				4931124919816AD9006C271E /* LAWalkthroughViewController.m */,
+			);
+			name = LAWalkthrough;
+			path = ../../LAWalkthrough/LAWalkthrough;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,9 +234,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4931122D19805EBB006C271E /* ViewController.m in Sources */,
+				4931124A19816AD9006C271E /* LAWalkthroughViewController.m in Sources */,
 				4931122A19805EBB006C271E /* AppDelegate.m in Sources */,
 				4931122719805EBB006C271E /* main.m in Sources */,
+				49F968CD198943B8003C163A /* homeViewController.m in Sources */,
+				49F968D01989458B003C163A /* activitiesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,8 +354,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Charity Map/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -344,8 +367,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = "Charity Map/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -402,6 +427,7 @@
 				4931124319805EBB006C271E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4931124419805EBB006C271E /* Build configuration list for PBXNativeTarget "Charity MapTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +436,7 @@
 				4931124619805EBB006C271E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
