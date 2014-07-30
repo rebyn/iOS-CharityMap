@@ -27,6 +27,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     // Fancy fade-in animation at the beginning
     _emptyActivitiesWelcomeScreen.alpha = 0;
     [UIView animateWithDuration:1.5 animations:^{
