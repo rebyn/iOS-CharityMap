@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface activitiesViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UIButton *discoverMoreButton;
+@property (weak, nonatomic) IBOutlet UIButton *discoverMoreButton;
+@property (strong, nonatomic) IBOutlet UIView *emptyActivitiesWelcomeScreen;
 
 @end

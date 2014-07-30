@@ -25,9 +25,12 @@
     [self.view addSubview:syncedStatusBarBackground];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    // Turn on empty
+    // [self.emptyActivitiesWelcomeScreen removeFromSuperview];
+    [UIView animateWithDuration:5 animations:^{
+        _emptyActivitiesWelcomeScreen.alpha = 0.1;
+    }];
 }
 
 /*

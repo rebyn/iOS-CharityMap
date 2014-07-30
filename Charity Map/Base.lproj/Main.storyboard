@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6190.4"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Discover-->
         <scene sceneID="Rgc-bT-5ri">
             <objects>
-                <viewController id="phn-55-BQ2" sceneMemberID="viewController">
+                <viewController id="phn-55-BQ2" customClass="projectsCollectionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bDY-uw-3jB"/>
                         <viewControllerLayoutGuide type="bottom" id="EHw-Nx-geZ"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="2Pj-TU-To1"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="charityMapTabIcon" selectedImage="charityMapTabIcon" id="2Pj-TU-To1"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1Y-4z-dDq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -39,17 +39,17 @@
                             <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="umS-1h-pjY" userLabel="emptyActivities">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="430"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="activityTabIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ikB-UX-cTm">
-                                        <rect key="frame" x="135" y="121" width="48" height="32"/>
+                                    <imageView userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="activityIcon" translatesAutoresizingMaskIntoConstraints="NO" id="ikB-UX-cTm">
+                                        <rect key="frame" x="135" y="92" width="48" height="32"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Activity empty" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GoF-Wm-GAR">
-                                        <rect key="frame" x="91" y="184" width="137" height="28"/>
+                                        <rect key="frame" x="91" y="189" width="137" height="28"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="When you back a project or follow a friend, their activities will be here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="242" translatesAutoresizingMaskIntoConstraints="NO" id="CG7-EH-Tjh">
-                                        <rect key="frame" x="38" y="220" width="242" height="67"/>
+                                        <rect key="frame" x="38" y="230" width="242" height="67"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -81,6 +81,7 @@
                     <tabBarItem key="tabBarItem" title="Activity" image="activityTabIcon" id="TPh-yi-lph"/>
                     <connections>
                         <outlet property="discoverMoreButton" destination="KKb-Uh-bmh" id="MQm-aC-8tD"/>
+                        <outlet property="emptyActivitiesWelcomeScreen" destination="umS-1h-pjY" id="VsV-3q-bHb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ad4-jq-dnk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -108,7 +109,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="activityTabIcon" width="48" height="32"/>
+        <image name="activityIcon" width="64" height="64"/>
+        <image name="activityTabIcon" width="32" height="32"/>
+        <image name="charityMapTabIcon" width="32" height="32"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
