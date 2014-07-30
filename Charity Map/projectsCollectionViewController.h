@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface projectsCollectionViewController : UICollectionViewController
-
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic, strong) NSArray *dataArray;
 @end

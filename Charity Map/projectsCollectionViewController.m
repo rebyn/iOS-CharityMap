@@ -18,12 +18,25 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSMutableArray *firstSection = [[NSMutableArray alloc] init];
+    NSMutableArray *secondSection = [[NSMutableArray alloc] init];
+    for (int i=0; i<50; i++) {
+        [firstSection addObject:[NSString stringWithFormat:@"Cell %d", i]];
+        [secondSection addObject:[NSString stringWithFormat:@"item %d", i]];
+    }
+    self.dataArray = [[NSArray alloc] initWithObjects:firstSection, secondSection, nil];
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"projectViewCell"];
+    
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    [flowLayout setItemSize:CGSizeMake(200, 200)];
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    
+    [self.collectionView setCollectionViewLayout:flowLayout];
     
     // Do any additional setup after loading the view.
 }
@@ -46,18 +59,18 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete method implementation -- Return the number of sections
-    return 0;
+    return [self.dataArray count];
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete method implementation -- Return the number of items in the section
-    return 0;
+    NSMutableArray *sectionArray = [self.dataArray objectAtIndex:section];
+    return [sectionArray count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    
+    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"projectViewCell" forIndexPath:indexPath];
     
     // Configure the cell
     
