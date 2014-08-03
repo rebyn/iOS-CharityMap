@@ -15,6 +15,7 @@
 		4931124A19816AD9006C271E /* LAWalkthroughViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4931124919816AD9006C271E /* LAWalkthroughViewController.m */; };
 		4957B19D198958EF00417C26 /* projectsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4957B19C198958EF00417C26 /* projectsCollectionViewController.m */; };
 		4957B1A11989880600417C26 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4957B1A01989880600417C26 /* Crashlytics.framework */; };
+		498C5478198DD04300EF51E9 /* projectCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 498C5477198DD04300EF51E9 /* projectCollectionViewCell.m */; };
 		49F968CD198943B8003C163A /* homeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F968CC198943B8003C163A /* homeViewController.m */; };
 		49F968D01989458B003C163A /* activitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 49F968CF1989458B003C163A /* activitiesViewController.m */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,8 @@
 		4957B19B198958EF00417C26 /* projectsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = projectsCollectionViewController.h; sourceTree = "<group>"; };
 		4957B19C198958EF00417C26 /* projectsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = projectsCollectionViewController.m; sourceTree = "<group>"; };
 		4957B1A01989880600417C26 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		498C5476198DD04300EF51E9 /* projectCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = projectCollectionViewCell.h; sourceTree = "<group>"; };
+		498C5477198DD04300EF51E9 /* projectCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = projectCollectionViewCell.m; sourceTree = "<group>"; };
 		49F968CB198943B8003C163A /* homeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homeViewController.h; sourceTree = "<group>"; };
 		49F968CC198943B8003C163A /* homeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homeViewController.m; sourceTree = "<group>"; };
 		49F968CE1989458B003C163A /* activitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = activitiesViewController.h; sourceTree = "<group>"; };
@@ -104,6 +107,8 @@
 				49F968CF1989458B003C163A /* activitiesViewController.m */,
 				4957B19B198958EF00417C26 /* projectsCollectionViewController.h */,
 				4957B19C198958EF00417C26 /* projectsCollectionViewController.m */,
+				498C5476198DD04300EF51E9 /* projectCollectionViewCell.h */,
+				498C5477198DD04300EF51E9 /* projectCollectionViewCell.m */,
 			);
 			path = "Charity Map";
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 			files = (
 				4931124A19816AD9006C271E /* LAWalkthroughViewController.m in Sources */,
 				4931122A19805EBB006C271E /* AppDelegate.m in Sources */,
+				498C5478198DD04300EF51E9 /* projectCollectionViewCell.m in Sources */,
 				4931122719805EBB006C271E /* main.m in Sources */,
 				49F968CD198943B8003C163A /* homeViewController.m in Sources */,
 				4957B19D198958EF00417C26 /* projectsCollectionViewController.m in Sources */,

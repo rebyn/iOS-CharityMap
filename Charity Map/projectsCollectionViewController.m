@@ -7,6 +7,7 @@
 //
 
 #import "projectsCollectionViewController.h"
+#import "projectCollectionViewCell.h"
 
 @interface projectsCollectionViewController ()
 
@@ -18,32 +19,34 @@ static NSString * const reuseIdentifier = @"projectViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSMutableArray *firstSection = [[NSMutableArray alloc] init];
-    NSMutableArray *secondSection = [[NSMutableArray alloc] init];
+    NSMutableArray *dataArray = [[NSMutableArray alloc] init];
     for (int i=0; i<50; i++) {
-        [firstSection addObject:[NSString stringWithFormat:@"Cell %d", i]];
-        [secondSection addObject:[NSString stringWithFormat:@"item %d", i]];
+        [dataArray addObject:[[NSDictionary alloc] initWithObjectsAndKeys:
+                              @"value1", @"key1", @"value2", @"key2", nil]];
     }
-    self.dataArray = [[NSArray alloc] initWithObjects:firstSection, secondSection, nil];
+
+    // Status bar to have the same background as navigationBar
+    UIView *syncedStatusBarBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
+    syncedStatusBarBackground.backgroundColor = [UIColor colorWithRed:0.973 green:0.973 blue:0.973 alpha:1]; /*#f8f8f8*/
+    [self.view addSubview:syncedStatusBarBackground];
 }
 
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return [self.dataArray count];
+    return 1;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    NSMutableArray *sectionArray = [self.dataArray objectAtIndex:section];
-    return [sectionArray count];
+    return 50;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell
-    
+    projectCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    cell.projectThumbnail.image = [UIImage imageNamed:@"projectThumbnail"];
+    cell.projectTitle.text = @"Here comes the title";
+    cell.projectDescription.text = @"Here comes the description";
+    [cell.projectProgress setProgress:(float) 0.3];
     return cell;
 }
 

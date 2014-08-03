@@ -11,4 +11,6 @@
 @interface projectsCollectionViewController : UICollectionViewController
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *dataArray;
+@property (strong, nonatomic) IBOutlet UIProgressView *projectProgress;
+
 @end
