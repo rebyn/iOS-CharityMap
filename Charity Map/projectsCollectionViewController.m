@@ -8,6 +8,7 @@
 
 #import "projectsCollectionViewController.h"
 #import "projectCollectionViewCell.h"
+#import "AFHTTPRequestOperationManager.h"
 
 @interface projectsCollectionViewController ()
 
@@ -19,12 +20,16 @@ static NSString * const reuseIdentifier = @"projectViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSMutableArray *dataArray = [[NSMutableArray alloc] init];
-    for (int i=0; i<50; i++) {
-        [dataArray addObject:[[NSDictionary alloc] initWithObjectsAndKeys:
-                              @"value1", @"key1", @"value2", @"key2", nil]];
-    }
-
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    [manager.requestSerializer setValue:@"utf-8" forHTTPHeaderField:@"Accept-Charset"];
+    [manager GET:@"https://CharityMap:Saigon2013@www.charity-map.org/api/v1/projects.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        _dataArray = responseObject;
+        NSLog(@"JSON: %@", _dataArray);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+    
     // Status bar to have the same background as navigationBar
     UIView *syncedStatusBarBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
     syncedStatusBarBackground.backgroundColor = [UIColor colorWithRed:0.973 green:0.973 blue:0.973 alpha:1]; /*#f8f8f8*/
