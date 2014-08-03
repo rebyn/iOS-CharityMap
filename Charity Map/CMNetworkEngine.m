@@ -11,7 +11,7 @@
 
 @implementation CMNetworkEngine
 
-- (void)makeApiCall:(NSString *)url method:(NSString *)method params:(NSDictionary *)params
+- (void)makeApiCall:(NSString *)url method:(NSString *)method params:(NSDictionary *)params completionHandler:(void (^)(NSArray * projects))completionBlock
 {
 //    NSURL *backendURL = [NSURL URLWithString:url];
 //    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:backendURL];
@@ -37,18 +37,21 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager.requestSerializer setValue:@"utf-8" forHTTPHeaderField:@"Accept-Charset"];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (completionBlock) completionBlock(responseObject);
         self.projects = responseObject;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
 }
 
-- (void) listedProjects {
+- (void) listedProjectsWithcompletionHandler:(void (^)(NSArray * projects))completionBlock {
     NSString *url = @"https://CharityMap:Saigon2013@www.charity-map.org/api/v1/projects.json";
 //    NSDictionary* params = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
 //                            self.authToken, @"auth_token",
 //                            userId,         @"id", nil];
-    [self makeApiCall:url method:@"GET" params:[NSMutableDictionary dictionary]];
+    [self makeApiCall:url method:@"GET" params:[NSMutableDictionary dictionary] completionHandler:^(NSArray *projects) {
+        if (completionBlock) completionBlock(projects);
+    }];
 }
 
 @end

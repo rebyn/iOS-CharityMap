@@ -14,6 +14,6 @@
 @property (strong) NSString* authToken;
 @property (strong) NSArray* projects;
 
-- (void) listedProjects;
+- (void) listedProjectsWithcompletionHandler:(void (^)(NSArray * projects))completionBlock;
 
 @end

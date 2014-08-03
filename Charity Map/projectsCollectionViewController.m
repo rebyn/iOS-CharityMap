@@ -31,9 +31,10 @@ static NSString * const reuseIdentifier = @"projectViewCell";
     [super viewWillAppear:animated];
     CMNetworkEngine *apiClient = [[CMNetworkEngine alloc] init];
     apiClient.debug = YES;
-    [apiClient listedProjects];
-    NSArray *projects = apiClient.projects;
-    NSLog(@"At controller: %@", projects);
+    [apiClient listedProjectsWithcompletionHandler:^(NSArray *projects){
+        self.dataArray = projects;
+        [self.collectionView reloadData];
+    }];
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -43,17 +44,32 @@ static NSString * const reuseIdentifier = @"projectViewCell";
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 50;
+    return [self.dataArray count];
+}
+
+- (UIImage *) getImageFromURL:(NSString *)fileURL {
+    @autoreleasepool {
+        UIImage * result;
+        
+        NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:fileURL]];
+        result = [UIImage imageWithData:data];
+        
+        return result;
+    }
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     projectCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.projectThumbnail.image = [UIImage imageNamed:@"projectThumbnail"];
-    cell.projectTitle.text = @"Here comes the title";
-    cell.projectDescription.text = @"Here comes the description";
-    [cell.projectProgress setProgress:(float) 0.3];
+    NSDictionary *projectInfo = [self.dataArray objectAtIndex:indexPath.row];
+    
+    UIImage *projectThumbnail = [self getImageFromURL:[projectInfo valueForKey:@"thumbnail"]];
+    cell.projectThumbnail.image = projectThumbnail;
+    cell.projectTitle.text = [projectInfo valueForKey:@"title"];
+    cell.projectDescription.text = [projectInfo valueForKey:@"location"];
+    [cell.projectProgress setProgress:(float)[[projectInfo valueForKey:@"progress"] floatValue]];
     return cell;
 }
+
 
 /*
  #pragma mark - Navigation
