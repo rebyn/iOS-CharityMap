@@ -8,7 +8,7 @@
 
 #import "projectsCollectionViewController.h"
 #import "projectCollectionViewCell.h"
-#import "AFHTTPRequestOperationManager.h"
+#import "CMNetworkEngine.h"
 
 @interface projectsCollectionViewController ()
 
@@ -20,20 +20,18 @@ static NSString * const reuseIdentifier = @"projectViewCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager.requestSerializer setValue:@"utf-8" forHTTPHeaderField:@"Accept-Charset"];
-    [manager GET:@"https://CharityMap:Saigon2013@www.charity-map.org/api/v1/projects.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        _dataArray = responseObject;
-        NSLog(@"JSON: %@", _dataArray);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    
+
     // Status bar to have the same background as navigationBar
     UIView *syncedStatusBarBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
     syncedStatusBarBackground.backgroundColor = [UIColor colorWithRed:0.973 green:0.973 blue:0.973 alpha:1]; /*#f8f8f8*/
     [self.view addSubview:syncedStatusBarBackground];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    CMNetworkEngine *apiClient = [[CMNetworkEngine alloc] init];
+    apiClient.debug = YES;
+    [apiClient listedProjects];
 }
 
 #pragma mark <UICollectionViewDataSource>

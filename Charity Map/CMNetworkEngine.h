@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AFHTTPRequestOperationManager.h"
 
-@interface CMNetworkEngine : AFHTTPRequestOperationManager
+@interface CMNetworkEngine : NSObject
+
+@property BOOL debug;
+@property (strong) NSString* authToken;
+
+- (void) listedProjects;
 
 @end
