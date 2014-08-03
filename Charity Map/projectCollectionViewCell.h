@@ -13,5 +13,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *projectTitle;
 @property (strong, nonatomic) IBOutlet UILabel *projectDescription;
 @property (strong, nonatomic) IBOutlet UIProgressView *projectProgress;
+@property (strong, nonatomic) IBOutlet UILabel *fundingTarget;
+@property (strong, nonatomic) IBOutlet UILabel *amountRaised;
+@property (strong, nonatomic) IBOutlet UILabel *endDate;
 
 @end

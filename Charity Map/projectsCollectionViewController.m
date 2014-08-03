@@ -25,10 +25,10 @@ static NSString * const reuseIdentifier = @"projectViewCell";
     UIView *syncedStatusBarBackground = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 20)];
     syncedStatusBarBackground.backgroundColor = [UIColor colorWithRed:0.973 green:0.973 blue:0.973 alpha:1]; /*#f8f8f8*/
     [self.view addSubview:syncedStatusBarBackground];
+    [self fetchApiAndReloadData];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)fetchApiAndReloadData {
     CMNetworkEngine *apiClient = [[CMNetworkEngine alloc] init];
     apiClient.debug = YES;
     [apiClient listedProjectsWithcompletionHandler:^(NSArray *projects){
@@ -67,6 +67,9 @@ static NSString * const reuseIdentifier = @"projectViewCell";
     cell.projectTitle.text = [projectInfo valueForKey:@"title"];
     cell.projectDescription.text = [projectInfo valueForKey:@"location"];
     [cell.projectProgress setProgress:(float)[[projectInfo valueForKey:@"progress"] floatValue]];
+    cell.fundingTarget.text = [projectInfo valueForKey:@"funding_goal"];
+    cell.amountRaised.text = [projectInfo valueForKey:@"fundraised"];
+    cell.endDate.text = [projectInfo valueForKey:@"deadline"];
     return cell;
 }
 
