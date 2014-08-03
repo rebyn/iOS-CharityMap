@@ -32,6 +32,8 @@ static NSString * const reuseIdentifier = @"projectViewCell";
     CMNetworkEngine *apiClient = [[CMNetworkEngine alloc] init];
     apiClient.debug = YES;
     [apiClient listedProjects];
+    NSArray *projects = apiClient.projects;
+    
 }
 
 #pragma mark <UICollectionViewDataSource>

@@ -12,6 +12,7 @@
 
 @property BOOL debug;
 @property (strong) NSString* authToken;
+@property (strong) NSArray* projects;
 
 - (void) listedProjects;
 

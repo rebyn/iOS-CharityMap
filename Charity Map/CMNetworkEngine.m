@@ -11,7 +11,7 @@
 
 @implementation CMNetworkEngine
 
-- (void) makeApiCall:(NSString *)url method:(NSString *)method params:(NSDictionary *)params
+- (id) makeApiCall:(NSString *)url method:(NSString *)method params:(NSDictionary *)params
 {
 //    NSURL *backendURL = [NSURL URLWithString:url];
 //    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:backendURL];
@@ -37,7 +37,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager.requestSerializer setValue:@"utf-8" forHTTPHeaderField:@"Accept-Charset"];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+        self.projects = responseObject;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -49,6 +49,7 @@
 //                            self.authToken, @"auth_token",
 //                            userId,         @"id", nil];
     [self makeApiCall:url method:@"GET" params:[NSMutableDictionary dictionary]];
+    NSLog(@"%@", self.projects);
 }
 
 @end
