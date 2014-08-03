@@ -33,7 +33,7 @@ static NSString * const reuseIdentifier = @"projectViewCell";
     apiClient.debug = YES;
     [apiClient listedProjects];
     NSArray *projects = apiClient.projects;
-    
+    NSLog(@"At controller: %@", projects);
 }
 
 #pragma mark <UICollectionViewDataSource>

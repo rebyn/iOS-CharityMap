@@ -11,7 +11,7 @@
 
 @implementation CMNetworkEngine
 
-- (id) makeApiCall:(NSString *)url method:(NSString *)method params:(NSDictionary *)params
+- (void)makeApiCall:(NSString *)url method:(NSString *)method params:(NSDictionary *)params
 {
 //    NSURL *backendURL = [NSURL URLWithString:url];
 //    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:backendURL];
@@ -49,7 +49,6 @@
 //                            self.authToken, @"auth_token",
 //                            userId,         @"id", nil];
     [self makeApiCall:url method:@"GET" params:[NSMutableDictionary dictionary]];
-    NSLog(@"%@", self.projects);
 }
 
 @end
