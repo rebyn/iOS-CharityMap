@@ -67,9 +67,9 @@ static NSString * const reuseIdentifier = @"projectViewCell";
     cell.projectTitle.text = [projectInfo valueForKey:@"title"];
     cell.projectDescription.text = [projectInfo valueForKey:@"location"];
     [cell.projectProgress setProgress:(float)[[projectInfo valueForKey:@"progress"] floatValue]];
-    cell.fundingTarget.text = [projectInfo valueForKey:@"funding_goal"];
-    cell.amountRaised.text = [projectInfo valueForKey:@"fundraised"];
-    cell.endDate.text = [projectInfo valueForKey:@"deadline"];
+    // cell.fundingGoal.text = [projectInfo valueForKey:@"funding_goal"];
+    // cell.amountRaised.text = [projectInfo valueForKey:@"fundraised"];
+    // cell.endDate.text = [projectInfo valueForKey:@"deadline"];
     return cell;
 }
 
